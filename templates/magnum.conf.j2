@@ -24,8 +24,8 @@ endpoint_type = internalURL
 [heat_client]
 endpoint_type = internalURL
 
-[keystone_authtoken]
-auth_uri = {{ keystone_service_internalurl }}
+[keystone_auth]
+www_authenticate_uri = {{ keystone_service_internalurl }}
 auth_version = v3
 insecure = {{ keystone_service_internaluri_insecure | bool }}
 memcached_servers = {{ memcached_servers }}
@@ -70,7 +70,3 @@ trustee_keystone_interface= public
 
 [certificates]
 cert_manager_type = {{ magnum_cert_manager_type }}
-
-[drivers]
-verify_ca = {{ magnum_enable_verify_ca }}
-openstack_ca_file = {{ magnum_ca_file_bundle_path }}
